@@ -58,15 +58,14 @@
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="lblNo">No du joueur</label>  
-  <div class="col-md-4">
-  <input id="lblNo" name="lblNo" type="text" placeholder="" class="form-control input-md" required="">
-    
+  <div class="col-md-1">
+  <input id="lblNo" name="lblNo" type="number" value="99" min="1" max="99" placeholder="" class="form-control input-md" required="">   
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="lblEquipe">Equipe</label>  
+  <label class="col-md-4 control-label" for="lblEquipe">Équipe</label>  
   <div class="col-md-4">
   <input id="lblEquipe" name="lblEquipe" type="text" placeholder="" class="form-control input-md" required="">
     
@@ -78,13 +77,6 @@
   <label class="col-md-4 control-label" for="dropDownAnnee">Année</label>
   <div class="col-md-4">
     <select id="dropDownAnnee" name="dropDownAnnee" class="form-control">
-      <option value="1">2016</option>
-      <option value="2">2015</option>
-      <option value="3">2014</option>
-      <option value="4">2013</option>
-      <option value="5">2012</option>
-      <option value="6">2011</option>
-      <option value="">2010</option>
     </select>
   </div>
 </div>
@@ -103,8 +95,12 @@
   <label class="col-md-4 control-label" for="dropDownEtat">État</label>
   <div class="col-md-4">
     <select id="dropDownEtat" name="dropDownEtat" class="form-control">
-      <option value="1">Protégé</option>
-      <option value="2">Non-Protégé</option>
+      <option value="1">Protégée</option>
+      <option value="2">Neuve</option>
+        <option value="3">Presque neuve</option>
+        <option value="4">Légèrement abîmée</option>
+        <option value="5">Abîmée</option>
+        <option value="6">Au bord du gouffre</option>
     </select>
   </div>
 </div>
@@ -112,9 +108,8 @@
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="lblQuantity">Quantité</label>  
-  <div class="col-md-4">
-  <input id="lblQuantity" name="lblQuantity" type="text" placeholder="" class="form-control input-md">
-    
+  <div class="col-md-1">
+  <input id="lblQuantity" name="lblQuantity" type="number" value="1" class="form-control input-md">  
   </div>
 </div>
 
@@ -122,15 +117,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="txtAreadCommentaire">Commentaires</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="txtAreadCommentaire" name="txtAreadCommentaire">Commentaires</textarea>
-  </div>
-</div>
-
-<!-- Button -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="btnDefault"></label>
-  <div class="col-md-4">
-    <button id="btnDefault" name="btnDefault" class="btn btn-inverse">Par défaut</button>
+      <textarea class="form-control" id="txtAreadCommentaire" placeholder="Vos commentaires ici..." name="txtAreadCommentaire"></textarea>
   </div>
 </div>
 
@@ -147,7 +134,7 @@
   <label class="col-md-4 control-label" for="button1id"></label>
   <div class="col-md-8">
     <button id="button1id" name="button1id" class="btn btn-success">Annuler</button>
-    <button id="button2id" name="button2id" class="btn btn-danger">Ajouter à la collection</button>
+    <button id="button2id" name="button2id" class="btn btn-danger">Ajouter à ma collection</button>
   </div>
 </div>
 
@@ -166,6 +153,7 @@
     
     <script src="js/app.js"></script>
 
+    <script src="js/ajout-cartes.js"></script>
 </body>
 
 </html>
