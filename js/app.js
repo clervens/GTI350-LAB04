@@ -6,6 +6,8 @@ $(function() {
 
 
 function loadLayout() {
-    $('.navbar').load('nav.html');
+    $.get('common/nav.html', function (nav) {
+        $('body').prepend(nav);
+    });
 }
 
