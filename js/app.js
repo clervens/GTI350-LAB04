@@ -1,7 +1,17 @@
+var app
+if (app = localStorage.getItem('autosave')) {
+  app = JSON.parse(app);
+} else {
+  app = { values: [] };
+}
 $(function() {
 
+  setInterval(function() {
+    localStorage.setItem('autosave', JSON.stringify(app));
+  }, 1000);
+
   loadLayout();
-  
+
 });
 
 
@@ -10,4 +20,3 @@ function loadLayout() {
         $('body').prepend(nav);
     });
 }
-
