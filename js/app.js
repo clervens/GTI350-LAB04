@@ -10,8 +10,7 @@ $(function() {
     localStorage.setItem('autosave', JSON.stringify(app));
   }, 1000);
 
-  loadLayout();
-
+  loadLayout();  
 });
 
 
@@ -19,4 +18,9 @@ function loadLayout() {
     $.get('/common/nav.html', function (nav) {
         $('body').prepend(nav);
     });
+}
+
+var model = {
+    "etats": ["Protégée","Impécable","Légèrement abîmée","Abîmée","Au bord du gouffre"]
+    
 }
