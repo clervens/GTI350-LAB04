@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Équipe 9">
+
+  <title>Gestionnaire de cartes de hockey</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <style>
+  body {
+    padding-top: 70px;
+    /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+  }
+  .cartable-card-container:hover img[alt="..."] + .data {
+    visibility: visible;
+    opacity: 1;
+  }
+  .cartable-card-container .data {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    right: 15px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.58);
+    color: white;
+    text-shadow: 1px 1px 1px #3F51B5;
+    padding: 5px;
+  }
+
+  .cartable-card-container img[alt="..."] + .data {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 200ms linear;
+  }
+
+  .cartable-card-container .data span {
+    display: block;
+    margin-bottom: 5px;
+  }
+  </style>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+
+  <!-- Navigation (insérée par JS) -->
+
+
+  <!-- Page Content -->
+  <div id="pageView">
+    <div class="container">
+
+      <form class="form-horizontal">
+        <fieldset>
+
+          <!-- Form Name -->
+          <legend>Cartables : Mes plus rare</legend>
+          <div class="col-md-12">
+            <nav>
+              <ul class="pagination">
+                <li>
+                  <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                  <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-md-2 cartable-card-container">
+            <img src="/images/placeholder.png" alt="..." class="img-thumbnail">
+            <div class="data">
+              <span>Sidney Crosby</span>
+              <span>#87</span>
+              <span>Pittsburgh Penguins</span>
+              <span>2005</span>
+              <span>UpperDeck</span>
+            </div>
+          </div>
+          <div class="col-md-2 cartable-card-container">
+            <img src="/images/placeholder.png" class="img-thumbnail">
+            <div class="data">
+              <span>Sidney Crosby</span>
+              <span>#87</span>
+              <span>Pittsburgh Penguins</span>
+              <span>2005</span>
+              <span>UpperDeck</span>
+            </div>
+          </div>
+          <div class="col-md-2 cartable-card-container">
+            <img src="/images/placeholder.png" alt="..." class="img-thumbnail">
+          </div>
+          <div class="col-md-2 cartable-card-container">
+            <img src="/images/placeholder.png" alt="..." class="img-thumbnail">
+          </div>
+          <div class="col-md-2 cartable-card-container">
+            <img src="/images/placeholder.png" alt="..." class="img-thumbnail">
+          </div>
+          <div class="col-md-2 cartable-card-container">
+            <img src="/images/placeholder.png" alt="..." class="img-thumbnail">
+          </div>
+          <div class="col-md-2 cartable-card-container">
+            <img src="/images/placeholder.png" alt="..." class="img-thumbnail">
+          </div>
+          <div class="col-md-2 cartable-card-container">
+            <img src="/images/placeholder.png" alt="..." class="img-thumbnail">
+          </div>
+          <div class="col-md-2 cartable-card-container">
+            <img src="/images/placeholder.png" alt="..." class="img-thumbnail">
+          </div>
+          <div class="col-md-2 cartable-card-container">
+            <img src="/images/placeholder.png" alt="..." class="img-thumbnail" >
+          </div>
+          <div class="col-md-2 cartable-card-container">
+            <img src="/images/placeholder.png" alt="..." class="img-thumbnail">
+          </div>
+          <div class="col-md-2 cartable-card-container">
+            <img src="/images/placeholder.png" alt="..." class="img-thumbnail">
+          </div>
+          <div class="col-md-2 cartable-card-container">
+            <img src="/images/placeholder.png" alt="..." class="img-thumbnail">
+          </div>
+          <div class="col-md-2 cartable-card-container">
+            <img src="/images/placeholder.png" alt="..." class="img-thumbnail">
+          </div>
+          <div class="col-md-2 cartable-card-container">
+            <img src="/images/placeholder.png" alt="..." class="img-thumbnail">
+          </div>
+          <div class="col-md-2 cartable-card-container">
+            <img src="/images/placeholder.png" alt="..." class="img-thumbnail">
+          </div>
+          <div class="col-md-2 cartable-card-container">
+            <img src="/images/placeholder.png" alt="..." class="img-thumbnail">
+          </div>
+          <div class="col-md-2 cartable-card-container">
+            <img src="/images/placeholder.png" alt="..." class="img-thumbnail">
+          </div>
+          <div class="col-md-12">
+            <nav class="pull-right">
+              <ul class="pagination">
+                <li>
+                  <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                  <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </fieldset>
+      </form>
+
+    </div>
+  </div>
+  <!-- /.container -->
+
+  <!-- jQuery Version 1.11.1 -->
+  <script src="/js/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="/js/bootstrap.min.js"></script>
+
+  <script src="/js/app.js"></script>
+
+</body>
+
+</html>
