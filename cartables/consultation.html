@@ -24,16 +24,26 @@
 			visibility: visible;
 			opacity: 1;
 		}
+        .card-container {
+            margin-bottom: 30px;
+        }
 		.card-container .data {
 			position: absolute;
 			top: 0;
 			left: 15px;
 			right: 15px;
 			height: 100%;
-			padding: 5px;
-			color: #21428F;
+            text-shadow: 1px 1px 1px black;
+            color: white;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.63);
 		}
-		.card-container .data .no {
+		.card-container.no-image .data {
+			color: #21428F;
+            background-color: transparent;
+            text-shadow: none;
+		}
+		.card-container.no-image .data .no {
 			position: absolute;
             bottom: 10%;
             left: 4%;
@@ -41,7 +51,7 @@
             text-align: center;
 		}
 		
-		.card-container .data .annee {
+		.card-container.no-image .data .annee {
 			color: white;
 			transform: rotate(90deg);
 			position: absolute;
@@ -50,7 +60,7 @@
 			font-size: 0.8em;
 		}
 		
-		.card-container .data .equipe {
+		.card-container.no-image .data .equipe {
 			color: white;
 			position: absolute;
 			bottom: 10%;
@@ -58,7 +68,7 @@
 			font-size: 0.7em;
 		}
 		
-		.card-container .data .serie {
+		.card-container.no-image .data .serie {
 			color: white;
 			transform: rotate(90deg);
 			position: absolute;
@@ -66,23 +76,32 @@
 			top: 33%;
 			font-size: 0.8em;
 		}
-		.card-container .data .nom {
+		.card-container.no-image .data .nom {
 			width: 76%;
 			font-size: 1.5em;
 			padding-top: 25%;
 			padding-left: 10%;
 		}
 
+		.card-container img + .data {
+			transition: visibility 0s, opacity 200ms linear;
+		}
+
 		.card-container img[alt="..."] + .data {
 			visibility: hidden;
 			opacity: 0;
-			transition: visibility 0s, opacity 200ms linear;
 		}
 
 		.card-container .data span {
 			display: block;
 			margin-bottom: 5px;
 		}
+        
+        .img-thumbnail {
+            max-height: 214px;
+            margin: 0 auto;
+            display: flex;
+        }
 	</style>
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -125,7 +144,7 @@
 					</div>
                     <div class="cartable-card-container">
                         <div class="col-md-2 card-container">
-                            <img src="/images/card-placeholder.png" alt="..." class="img-thumbnail">
+                            <img src="/images/dummies/dummy-06.jpg" alt="..." class="img-thumbnail">
                             <div class="data">
                                 <span>Sidney Crosby</span>
                                 <span>#87</span>
@@ -134,7 +153,7 @@
                                 <span>UpperDeck</span>
                             </div>
                         </div>
-                        <div class="col-md-2 card-container">
+                        <div class="col-md-2 card-container no-image">
                             <img src="/images/card-placeholder.png" class="img-thumbnail">
                             <div class="data">
                                 <span class="nom">Sidney Crosby</span>
@@ -144,7 +163,7 @@
                                 <span class="serie">UpperDeck</span>
                             </div>
                         </div>
-                        <div class="col-md-2 card-container">
+                        <div class="col-md-2 card-container no-image">
                             <img src="/images/card-placeholder.png" class="img-thumbnail">
                             <div class="data">
                                 <span class="nom">PK Subban</span>
@@ -154,7 +173,7 @@
                                 <span class="serie">UpperDeck</span>
                             </div>
                         </div>
-                        <div class="col-md-2 card-container">
+                        <div class="col-md-2 card-container no-image">
                             <img src="/images/card-placeholder.png" class="img-thumbnail">
                             <div class="data">
                                 <span class="nom">Erik Karlsson</span>
@@ -164,7 +183,7 @@
                                 <span class="serie">UpperDeck</span>
                             </div>
                         </div>
-                        <div class="col-md-2 card-container">
+                        <div class="col-md-2 card-container no-image">
                             <img src="/images/card-placeholder.png" class="img-thumbnail">
                             <div class="data">
                                 <span class="nom">Alex Ovechkin</span>
@@ -174,45 +193,102 @@
                                 <span class="serie">UpperDeck</span>
                             </div>
                         </div>
-                        <div class="col-md-2 card-container">
-                            <img src="/images/card-placeholder.png" alt="..." class="img-thumbnail">
+                        <div class="col-md-2 card-container no-image">
+                            <img src="/images/card-placeholder.png"  class="img-thumbnail">
+                            <div class="data">
+                                <span class="nom">Tyler Seguin</span>
+                                <span class="no">#91</span>
+                                <span class="equipe">Dallas Stars</span>
+                                <span class="annee">2015</span>
+                                <span class="serie">UpperDeck</span>
+                            </div>
                         </div>
-                        <div class="col-md-2 card-container">
-                            <img src="/images/card-placeholder.png" alt="..." class="img-thumbnail">
+                        <div class="col-md-2 card-container no-image">
+                            <img src="/images/card-placeholder.png" class="img-thumbnail">
+                            <div class="data">
+                                <span class="nom">Patrice Bergeron</span>
+                                <span class="no">#37</span>
+                                <span class="equipe">Boston Bruins</span>
+                                <span class="annee">2014</span>
+                                <span class="serie">UpperDeck</span>
+                            </div>
                         </div>
-                        <div class="col-md-2 card-container">
-                            <img src="/images/card-placeholder.png" alt="..." class="img-thumbnail">
+                        <div class="col-md-2 card-container no-image">
+                            <img src="/images/card-placeholder.png" class="img-thumbnail">
+                            <div class="data">
+                                <span class="nom">Mark Stone</span>
+                                <span class="no">#61</span>
+                                <span class="equipe">Ottawa Senators</span>
+                                <span class="annee">2013</span>
+                                <span class="serie">UpperDeck</span>
+                            </div>
                         </div>
-                        <div class="col-md-2 card-container">
-                            <img src="/images/card-placeholder.png" alt="..." class="img-thumbnail">
+                        <div class="col-md-2 card-container no-image">
+                            <img src="/images/card-placeholder.png" class="img-thumbnail">
+                            <div class="data">
+                                <span class="nom">Daniel Sedin</span>
+                                <span class="no">#22</span>
+                                <span class="equipe">Vancouver Canucks</span>
+                                <span class="annee">2014</span>
+                                <span class="serie">UpperDeck</span>
+                            </div>
                         </div>
-                        <div class="col-md-2 card-container">
-                            <img src="/images/card-placeholder.png" alt="..." class="img-thumbnail" >
+                        <div class="col-md-2 card-container no-image">
+                            <img src="/images/card-placeholder.png" class="img-thumbnail">
+                            <div class="data">
+                                <span class="nom">Nikita Kucherov</span>
+                                <span class="no">#86</span>
+                                <span class="equipe">Tampa Bay Lightning</span>
+                                <span class="annee">2015</span>
+                                <span class="annee">2015</span>
+                                <span class="serie">UpperDeck</span>
+                            </div>
                         </div>
-                        <div class="col-md-2 card-container">
-                            <img src="/images/card-placeholder.png" alt="..." class="img-thumbnail">
+                        <div class="col-md-2 card-container no-image">
+                            <img src="/images/card-placeholder.png" class="img-thumbnail">
+                            <div class="data">
+                                <span class="nom">Kris Letang</span>
+                                <span class="no">#58</span>
+                                <span class="equipe">Pittsburgh Penguins</span>
+                                <span class="annee">2013</span>
+                                <span class="serie">UpperDeck</span>
+                            </div>
                         </div>
-                        <div class="col-md-2 card-container">
-                            <img src="/images/card-placeholder.png" alt="..." class="img-thumbnail">
+                        <div class="col-md-2 card-container no-image">
+                            <img src="/images/card-placeholder.png" class="img-thumbnail">
+                            <div class="data">
+                                <span class="nom">John Tavares</span>
+                                <span class="no">#91</span>
+                                <span class="equipe">New York Islanders</span>
+                                <span class="annee">2012</span>
+                                <span class="serie">UpperDeck</span>
+                            </div>
                         </div>
-                        <div class="col-md-2 card-container">
-                            <img src="/images/card-placeholder.png" alt="..." class="img-thumbnail">
+                        <div class="col-md-2 card-container no-image">
+                            <img src="/images/card-placeholder.png" class="img-thumbnail">
+                            <div class="data">
+                                <span class="nom">Jaromir Jagr</span>
+                                <span class="no">#68</span>
+                                <span class="equipe">Florida Panthers</span>
+                                <span class="annee">2015</span>
+                                <span class="serie">UpperDeck</span>
+                            </div>
                         </div>
+                        <div class="col-md-2 card-container no-image"><img src="/images/dummies/dummy-01.jpg" alt="" class="img-thumbnail"></div>
+                        <div class="col-md-2 card-container no-image"><img src="/images/dummies/dummy-02.jpg" alt="" class="img-thumbnail"></div>
                         <div class="col-md-2 card-container">
-                            <img src="/images/card-placeholder.png" alt="..." class="img-thumbnail">
+                            <img src="/images/dummies/dummy-03.jpg"  alt="..." class="img-thumbnail">
+                            <div class="data">
+                                <span class="nom">Alex Ovechkin</span>
+                                <span class="no">#8</span>
+                                <span class="equipe">Washington Capitals</span>
+                                <span class="annee">2015</span>
+                                <span class="serie">UpperDeck</span>
+                            </div>
                         </div>
-                        <div class="col-md-2 card-container">
-                            <img src="/images/card-placeholder.png" alt="..." class="img-thumbnail">
-                        </div>
-                        <div class="col-md-2 card-container">
-                            <img src="/images/card-placeholder.png" alt="..." class="img-thumbnail">
-                        </div>
-                        <div class="col-md-2 card-container">
-                            <img src="/images/card-placeholder.png" alt="..." class="img-thumbnail">
-                        </div>
-                        <div class="col-md-2 card-container">
-                            <img src="/images/card-placeholder.png" alt="..." class="img-thumbnail">
-                        </div>
+                        <div class="col-md-2 card-container"><img src="/images/dummies/dummy-04.jpg" alt="" class="img-thumbnail"></div>
+                        <div class="col-md-2 card-container"><img src="/images/dummies/dummy-05.jpg" alt="" class="img-thumbnail"></div>
+
                     </div>
 					<div class="col-md-12">
 						<nav class="pull-right">
