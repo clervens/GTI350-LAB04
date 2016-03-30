@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Équipe 9">
+    <meta name="author" content="Ã‰quipe 9">
 
     <title>Consultation de cartes</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <style>
@@ -33,7 +33,7 @@
 
 <body>
 
-    <!-- Navigation (insérée par JS) -->
+    <!-- Navigation (insÃ©rÃ©e par JS) -->
 
 
     <!-- Page Content -->
@@ -44,12 +44,14 @@
                 <fieldset>
 
                     <!-- Form Name -->
-                    <legend>Détails sur la carte</legend>
+                    <legend>DÃ©tails sur la carte</legend>
 
                     <!-- Text input-->
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="lblNom">Nom du joueur</label>
-                        <label class="col-md-4 control-label pull-right" for="lblNom2">leNom</label>
+                        <div class="col-md-4">
+                            <label class="control-label" for="lblNom2">leNom</label>
+                        </div>
                     </div>
 
                     <!-- Text input-->
@@ -62,7 +64,7 @@
 
                     <!-- Text input-->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="lblEquipe">Équipe</label>
+                        <label class="col-md-4 control-label" for="lblEquipe">Ã‰quipe</label>
                         <div class="col-md-4">
                             <input id="lblEquipe" name="lblEquipe" type="text" placeholder="" class="form-control input-md" required="">
 
@@ -71,7 +73,7 @@
 
                     <!-- Select Basic -->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="dropDownAnnee">Année</label>
+                        <label class="col-md-4 control-label" for="dropDownAnnee">AnnÃ©e</label>
                         <div class="col-md-4">
                             <select id="dropDownAnnee" name="dropDownAnnee" class="form-control">
                             </select>
@@ -80,7 +82,7 @@
 
                     <!-- Text input-->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="lblSerie">Série</label>
+                        <label class="col-md-4 control-label" for="lblSerie">SÃ©rie</label>
                         <div class="col-md-4">
                             <input id="lblSerie" name="lblSerie" type="text" placeholder="" class="form-control input-md">
 
@@ -89,7 +91,7 @@
 
                     <!-- Select Basic -->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="dropDownEtat">État</label>
+                        <label class="col-md-4 control-label" for="dropDownEtat">Ã‰tat</label>
                         <div class="col-md-4">
                             <select id="dropDownEtat" name="dropDownEtat" class="form-control">
                                 
@@ -99,7 +101,7 @@
 
                     <!-- Text input-->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="lblQuantity">Quantité</label>
+                        <label class="col-md-4 control-label" for="lblQuantity">QuantitÃ©</label>
                         <div class="col-md-2">
                             <input id="lblQuantity" name="lblQuantity" type="number" value="1" min="1" max="99" class="form-control input-md">
                         </div>
@@ -125,7 +127,7 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="lblImage"></label>
                         <div class="col-md-8">
-                            <input name="boutonAjouterCartes" type="submit" class="btn btn-primary" value="Ajouter à ma collection">
+                            <input name="boutonAjouterCartes" type="submit" class="btn btn-primary" value="Ajouter Ã  ma collection">
                         </div>
                     </div>
 
