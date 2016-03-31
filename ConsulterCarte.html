@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Équipe 9">
+
+    <title>Consultation de cartes</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            padding-top: 70px;
+            /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+        }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation (insérée par JS) -->
+
+
+    <!-- Page Content -->
+    <div id="pageView">
+        <div class="container">
+
+                <form class="form-horizontal">
+                <fieldset>
+
+                    <!-- Form Name -->
+                    <legend>Détails sur la carte</legend>
+
+                    <!--     Sa c pour Les labels               -->
+                    <div class="col-md-6">
+                        <!-- Text input-->
+                       <div class="form-group">
+                            <label class="col-md-4 control-label" for="lblNom">Nom du joueur</label>
+                            <div class="col-md-4">
+                                <label class="control-label" for="lblNom2">PK Subban</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="lblNo">No du joueur</label>
+                            <div class="col-md-4">
+                                <label class="control-label" for="lblNo2">#76</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="lblEquipe">Équipe</label>
+                            <div class="col-md-4">
+                                <label class="control-label" for="lblEquipe2">Montreal Canadians</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="lblAnnee">Année</label>
+                            <div class="col-md-4">
+                                <label class="control-label" for="lblAnnee2">2011</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="lblSerie">Série</label>
+                            <div class="col-md-4">
+                                <label class="control-label" for="lblSerie2">UpperDeck</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="lblEtat">État</label>
+                            <div class="col-md-4">
+                                <label class="control-label" for="lblEtat2">Protégé</label>
+                            </div>
+                        </div>
+                        
+                         <div class="form-group">
+                            <label class="col-md-4 control-label" for="lblQuantity">Quantité</label>
+                            <div class="col-md-4">
+                                <label class="control-label" for="lblQuantty2">1</label>
+                            </div>
+                        </div>
+                        
+                        <!-- Textarea -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="txtAreadCommentaire">Commentaires</label>
+                            <div class="col-md-4">
+                                <textarea class="form-control" id="txtAreadCommentaire" placeholder="Vos commentaires ici..." name="txtAreadCommentaire"></textarea>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!--     Sa c pour L'image               -->
+                    <div class="col-md-4">  
+                        <div class="card-container"><img src="/images/dummies/dummy-07.jpg" alt="" class="img-thumbnail pull-right"></div>
+                    </div>
+                    
+
+                                            
+                </fieldset>
+            </form>
+
+            <a href="mes-cartes.html">&#60;&#60; Mes cartes</a>
+        </div>
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/app.js"></script>
+
+    <script src="js/ajout-cartes.js"></script>
+</body>
+
+</html>
