@@ -46,91 +46,75 @@
                     <!-- Form Name -->
                     <legend>Détails sur la carte</legend>
 
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="lblNom">Nom du joueur</label>
-                        <div class="col-md-4">
-                            <label class="control-label" for="lblNom2">leNom</label>
+                    <!--     Sa c pour Les labels               -->
+                    <div class="col-md-6">
+                        <!-- Text input-->
+                       <div class="form-group">
+                            <label class="col-md-4 control-label" for="lblNom">Nom du joueur</label>
+                            <div class="col-md-4">
+                                <label class="control-label" for="lblNom2">PK Subban</label>
+                            </div>
                         </div>
-                    </div>
-
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="lblNo">No du joueur</label>
-                        <div class="col-md-2">
-                            <input id="lblNo" name="lblNo" type="number" value="99" min="1" max="99" placeholder="" class="form-control input-md" required="">
+                        
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="lblNo">No du joueur</label>
+                            <div class="col-md-4">
+                                <label class="control-label" for="lblNo2">#76</label>
+                            </div>
                         </div>
-                    </div>
-
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="lblEquipe">Équipe</label>
-                        <div class="col-md-4">
-                            <input id="lblEquipe" name="lblEquipe" type="text" placeholder="" class="form-control input-md" required="">
-
+                        
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="lblEquipe">Équipe</label>
+                            <div class="col-md-4">
+                                <label class="control-label" for="lblEquipe2">Montreal Canadians</label>
+                            </div>
                         </div>
-                    </div>
-
-                    <!-- Select Basic -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="dropDownAnnee">Année</label>
-                        <div class="col-md-4">
-                            <select id="dropDownAnnee" name="dropDownAnnee" class="form-control">
-                            </select>
+                        
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="lblAnnee">Année</label>
+                            <div class="col-md-4">
+                                <label class="control-label" for="lblAnnee2">2011</label>
+                            </div>
                         </div>
-                    </div>
-
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="lblSerie">Série</label>
-                        <div class="col-md-4">
-                            <input id="lblSerie" name="lblSerie" type="text" placeholder="" class="form-control input-md">
-
+                        
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="lblSerie">Série</label>
+                            <div class="col-md-4">
+                                <label class="control-label" for="lblSerie2">UpperDeck</label>
+                            </div>
                         </div>
-                    </div>
-
-                    <!-- Select Basic -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="dropDownEtat">État</label>
-                        <div class="col-md-4">
-                            <select id="dropDownEtat" name="dropDownEtat" class="form-control">
-                                
-                            </select>
+                        
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="lblEtat">État</label>
+                            <div class="col-md-4">
+                                <label class="control-label" for="lblEtat2">Protégé</label>
+                            </div>
                         </div>
-                    </div>
-
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="lblQuantity">Quantité</label>
-                        <div class="col-md-2">
-                            <input id="lblQuantity" name="lblQuantity" type="number" value="1" min="1" max="99" class="form-control input-md">
+                        
+                         <div class="form-group">
+                            <label class="col-md-4 control-label" for="lblQuantity">Quantité</label>
+                            <div class="col-md-4">
+                                <label class="control-label" for="lblQuantty2">1</label>
+                            </div>
                         </div>
-                    </div>
-
-                    <!-- Textarea -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="txtAreadCommentaire">Commentaires</label>
-                        <div class="col-md-4">
-                            <textarea class="form-control" id="txtAreadCommentaire" placeholder="Vos commentaires ici..." name="txtAreadCommentaire"></textarea>
+                        
+                        <!-- Textarea -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="txtAreadCommentaire">Commentaires</label>
+                            <div class="col-md-4">
+                                <textarea class="form-control" id="txtAreadCommentaire" placeholder="Vos commentaires ici..." name="txtAreadCommentaire"></textarea>
+                            </div>
                         </div>
+                        
                     </div>
-
-                    <!-- File Button -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="lblImage">Image</label>
-                        <div class="col-md-4">
-                            <input id="lblImage" name="lblImage" class="input-file" type="file">
-                        </div>
+                    
+                    <!--     Sa c pour L'image               -->
+                    <div class="col-md-4">  
+                        <div class="card-container"><img src="/images/dummies/dummy-07.jpg" alt="" class="img-thumbnail pull-right"></div>
                     </div>
+                    
 
-                    <!-- Button (Double) -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="lblImage"></label>
-                        <div class="col-md-8">
-                            <input name="boutonAjouterCartes" type="submit" class="btn btn-primary" value="Ajouter à ma collection">
-                        </div>
-                    </div>
-
+                                            
                 </fieldset>
             </form>
 
