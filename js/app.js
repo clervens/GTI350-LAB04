@@ -18,6 +18,9 @@ function loadLayout() {
     $.get('/common/nav.html', function (nav) {
         $('body').prepend(nav);
     });
+    $.get('/common/footer.html', function (nav) {
+        $('body').append(nav);
+    });
 }
 
 jQuery.extend({
