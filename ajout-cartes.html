@@ -13,6 +13,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <style>
@@ -49,84 +50,122 @@
 
                     <!-- Form Name -->
                     <legend>Ajout de cartes</legend>
+                    
+                    
+                    
+                    <div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">      
+        <a class="accordion-toggle collapsed panel-title" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          <h4 class="panel-title">Attributs communs</h4>
+        </a>      
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse">
+      <div class="panel-body">
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="lblNom">Nom du joueur</label>
+            <div class="col-md-4">
+                <input id="lblNom" name="lblNom" type="text" placeholder="" class="form-control input-md">
 
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="lblNom">Nom du joueur</label>
-                        <div class="col-md-4">
-                            <input id="lblNom" name="lblNom" type="text" placeholder="" class="form-control input-md" required="">
+            </div>
+        </div>
 
-                        </div>
-                    </div>
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="lblNo">No du joueur</label>
+            <div class="col-md-2">
+                <input id="lblNo" name="lblNo" type="number" value="99" min="1" max="99" placeholder="" class="form-control input-md">
+            </div>
+        </div>
 
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="lblNo">No du joueur</label>
-                        <div class="col-md-2">
-                            <input id="lblNo" name="lblNo" type="number" value="99" min="1" max="99" placeholder="" class="form-control input-md" required="">
-                        </div>
-                    </div>
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="lblEquipe">Équipe</label>
+            <div class="col-md-4">
+                <input id="lblEquipe" name="lblEquipe" type="text" placeholder="" class="form-control input-md">
 
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="lblEquipe">Équipe</label>
-                        <div class="col-md-4">
-                            <input id="lblEquipe" name="lblEquipe" type="text" placeholder="" class="form-control input-md" required="">
+            </div>
+        </div>
 
-                        </div>
-                    </div>
+        <!-- Select Basic -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="dropDownAnnee">Année</label>
+            <div class="col-md-4">
+                <select id="dropDownAnnee" name="dropDownAnnee" class="form-control dropDownAnnee">
+                </select>
+            </div>
+        </div>
 
-                    <!-- Select Basic -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="dropDownAnnee">Année</label>
-                        <div class="col-md-4">
-                            <select id="dropDownAnnee" name="dropDownAnnee" class="form-control">
-                            </select>
-                        </div>
-                    </div>
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="lblSerie">Série</label>
+            <div class="col-md-4">
+                <input id="lblSerie" name="lblSerie" type="text" placeholder="" class="form-control input-md">
 
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="lblSerie">Série</label>
-                        <div class="col-md-4">
-                            <input id="lblSerie" name="lblSerie" type="text" placeholder="" class="form-control input-md">
+            </div>
+        </div>
 
-                        </div>
-                    </div>
+        <!-- Select Basic -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="dropDownEtat">État</label>
+            <div class="col-md-4">
+                <select id="dropDownEtat" name="dropDownEtat" class="form-control dropDownEtat">
 
-                    <!-- Select Basic -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="dropDownEtat">État</label>
-                        <div class="col-md-4">
-                            <select id="dropDownEtat" name="dropDownEtat" class="form-control">
-                                
-                            </select>
-                        </div>
-                    </div>
+                </select>
+            </div>
+        </div>
 
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="lblQuantity">Quantité</label>
-                        <div class="col-md-2">
-                            <input id="lblQuantity" name="lblQuantity" type="number" value="1" min="1" max="99" class="form-control input-md">
-                        </div>
-                    </div>
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="lblQuantity">Quantité</label>
+            <div class="col-md-2">
+                <input id="lblQuantity" name="lblQuantity" type="number" value="1" min="1" max="99" class="form-control input-md">
+            </div>
+        </div>
 
-                    <!-- Textarea -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="txtAreadCommentaire">Commentaires</label>
-                        <div class="col-md-4">
-                            <textarea class="form-control" id="txtAreadCommentaire" placeholder="Vos commentaires ici..." name="txtAreadCommentaire"></textarea>
-                        </div>
-                    </div>
+        <!-- Textarea -->
+<!--
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="txtAreadCommentaire">Commentaires</label>
+            <div class="col-md-4">
+                <textarea class="form-control" id="txtAreadCommentaire" placeholder="Vos commentaires ici..." name="txtAreadCommentaire"></textarea>
+            </div>
+        </div>
+-->
 
-                    <!-- File Button -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="lblImage">Image</label>
-                        <div class="col-md-4">
-                            <input id="lblImage" name="lblImage" class="input-file" type="file">
-                        </div>
-                    </div>
+        <!-- File Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="lblImage">Image</label>
+            <div class="col-md-4">
+                <input id="lblImage" name="lblImage" class="input-file" type="file">
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+                    <table class="table table-striped table-hover table-responsive">
+	<thead>
+		<tr>
+			<th>Nom de joueur</th>
+			<th>No joueur</th>
+			<th>Équipe</th>
+			<th style="min-width: 100px;">Année</th>
+            <th>Série</th>
+			<th>État</th>
+			<th>Quantité</th>
+            <th>Retirer</th>
+		</tr>
+	</thead>
+	<tbody id="bodyTableCartes">
+                        </tbody>
+</table>
+                    
+<button type="button" class="btn btn-default btn-ajout-carte" aria-label="Left Align">
+  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+</button>
 
                     <!-- Button (Double) -->
                     <div class="form-group">
