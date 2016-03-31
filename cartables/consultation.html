@@ -3,343 +3,343 @@
 
 <head>
 
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="Équipe 9">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Équipe 9">
 
-	<title>Gestionnaire de cartes de hockey</title>
+  <title>Gestionnaire de cartes de hockey</title>
 
-	<!-- Bootstrap Core CSS -->
-	<link href="/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
 
-	<!-- Custom CSS -->
-	<style>
-		body {
-			padding-top: 70px;
-			/* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-		}
-		.card-container:hover img[alt="..."] + .data {
-			visibility: visible;
-			opacity: 1;
-		}
-        .card-container {
-            margin-bottom: 30px;
-        }
-		.card-container .data {
-			position: absolute;
-			top: 0;
-			left: 15px;
-			right: 15px;
-			height: 100%;
-            text-shadow: 1px 1px 1px black;
-            color: white;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.63);
-		}
-		.card-container.no-image .data {
-			color: #21428F;
-            background-color: transparent;
-            text-shadow: none;
-		}
-		.card-container.no-image .data .no {
-			position: absolute;
-            bottom: 10%;
-            left: 4%;
-            width: 18%;
-            text-align: center;
-		}
-		
-		.card-container.no-image .data .annee {
-			color: white;
-			transform: rotate(90deg);
-			position: absolute;
-			right: 6%;
-			top: 6%;
-			font-size: 0.8em;
-		}
-		
-		.card-container.no-image .data .equipe {
-			color: white;
-			position: absolute;
-			bottom: 10%;
-			left: 24%;
-			font-size: 0.7em;
-		}
-		
-		.card-container.no-image .data .serie {
-			color: white;
-			transform: rotate(90deg);
-			position: absolute;
-			right: -4%;
-			top: 33%;
-			font-size: 0.8em;
-		}
-		.card-container.no-image .data .nom {
-			width: 76%;
-			font-size: 1.5em;
-			padding-top: 25%;
-			padding-left: 10%;
-		}
+  <!-- Custom CSS -->
+  <style>
+  body {
+    padding-top: 70px;
+    /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+  }
+  .card-container:hover img[alt="..."] + .data {
+    visibility: visible;
+    opacity: 1;
+  }
+  .card-container {
+    margin-bottom: 30px;
+  }
+  .card-container .data {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    right: 15px;
+    height: 100%;
+    text-shadow: 1px 1px 1px black;
+    color: white;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.63);
+  }
+  .card-container.no-image .data {
+    color: #21428F;
+    background-color: transparent;
+    text-shadow: none;
+  }
+  .card-container.no-image .data .no {
+    position: absolute;
+    bottom: 10%;
+    left: 4%;
+    width: 18%;
+    text-align: center;
+  }
 
-		.card-container img + .data {
-			transition: visibility 0s, opacity 200ms linear;
-            font-size: 29px;
-		}
+  .card-container.no-image .data .annee {
+    color: white;
+    transform: rotate(90deg);
+    position: absolute;
+    right: 6%;
+    top: 6%;
+    font-size: 0.8em;
+  }
 
-		.card-container img[alt="..."] + .data {
-			visibility: hidden;
-			opacity: 0;
-		}
+  .card-container.no-image .data .equipe {
+    color: white;
+    position: absolute;
+    bottom: 10%;
+    left: 24%;
+    font-size: 0.7em;
+  }
 
-		.card-container .data span {
-			display: block;
-			margin-bottom: 5px;
-		}
-        
-        .img-thumbnail {
-            height: 460px;
-            margin: 0 auto;
-            display: flex;
-        }
-	</style>
+  .card-container.no-image .data .serie {
+    color: white;
+    transform: rotate(90deg);
+    position: absolute;
+    right: -4%;
+    top: 33%;
+    font-size: 0.8em;
+  }
+  .card-container.no-image .data .nom {
+    width: 76%;
+    font-size: 1.5em;
+    padding-top: 25%;
+    padding-left: 10%;
+  }
 
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-	<![endif]-->
+  .card-container img + .data {
+    transition: visibility 0s, opacity 200ms linear;
+    font-size: 29px;
+  }
+
+  .card-container img[alt="..."] + .data {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .card-container .data span {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .img-thumbnail {
+    height: 460px;
+    margin: 0 auto;
+    display: flex;
+  }
+  </style>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
 
 </head>
 <body>
-	<!-- Navigation (insérée par JS) -->
-	<!-- Page Content -->
-	<div id="pageView">
-		<div class="container">
-			<form class="form-horizontal">
-				<fieldset>
-					<!-- Form Name -->
-					<legend>Cartables : Mes plus rare</legend>
-					<div class="col-md-12">
-						<nav>
-							<ul class="pagination">
-								<li>
-									<a class="previous" href="?page=" aria-label="Previous">
-										<span aria-hidden="true">&laquo;</span>
-									</a>
-								</li>
-								<li><a href="?page=1">1</a></li>
-								<li><a href="?page=2">2</a></li>
-								<li><a href="?page=3">3</a></li>
-								<li><a href="?page=4">4</a></li>
-								<li><a href="?page=5">5</a></li>
-								<li>
-									<a class="next" href="?page=" aria-label="Next">
-										<span aria-hidden="true">&raquo;</span>
-									</a>
-								</li>
-							</ul>
-						</nav>
-					</div>
-                    <div class="cartable-card-container">
-                        <div class="col-md-4 card-container">
-                            <img src="/images/dummies/dummy-06.jpg" alt="..." class="img-thumbnail">
-                            <div class="data">
-                                <span>Sidney Crosby</span>
-                                <span>#87</span>
-                                <span>Pittsburgh Penguins</span>
-                                <span>2005</span>
-                                <span>UpperDeck</span>
-                            </div>
-                        </div>
-                        <div class="col-md-4 card-container no-image">
-                            <img src="/images/card-placeholder.png" class="img-thumbnail">
-                            <div class="data">
-                                <span class="nom">Sidney Crosby</span>
-                                <span class="no">#87</span>
-                                <span class="equipe">Pittsburgh Penguins</span>
-                                <span class="annee">2005</span>
-                                <span class="serie">UpperDeck</span>
-                            </div>
-                        </div>
-                        <div class="col-md-4 card-container no-image">
-                            <img src="/images/card-placeholder.png" class="img-thumbnail">
-                            <div class="data">
-                                <span class="nom">PK Subban</span>
-                                <span class="no">#76</span>
-                                <span class="equipe">Montreal Canadians</span>
-                                <span class="annee">2011</span>
-                                <span class="serie">UpperDeck</span>
-                            </div>
-                        </div>
-                        <div class="col-md-4 card-container no-image">
-                            <img src="/images/card-placeholder.png" class="img-thumbnail">
-                            <div class="data">
-                                <span class="nom">Erik Karlsson</span>
-                                <span class="no">#65</span>
-                                <span class="equipe">Ottawa Senators</span>
-                                <span class="annee">2013</span>
-                                <span class="serie">UpperDeck</span>
-                            </div>
-                        </div>
-                        <div class="col-md-4 card-container no-image">
-                            <img src="/images/card-placeholder.png" class="img-thumbnail">
-                            <div class="data">
-                                <span class="nom">Alex Ovechkin</span>
-                                <span class="no">#8</span>
-                                <span class="equipe">Washington Capitals</span>
-                                <span class="annee">2015</span>
-                                <span class="serie">UpperDeck</span>
-                            </div>
-                        </div>
-                        <div class="col-md-4 card-container no-image">
-                            <img src="/images/card-placeholder.png"  class="img-thumbnail">
-                            <div class="data">
-                                <span class="nom">Tyler Seguin</span>
-                                <span class="no">#91</span>
-                                <span class="equipe">Dallas Stars</span>
-                                <span class="annee">2015</span>
-                                <span class="serie">UpperDeck</span>
-                            </div>
-                        </div>
-                        <div class="col-md-4 card-container no-image">
-                            <img src="/images/card-placeholder.png" class="img-thumbnail">
-                            <div class="data">
-                                <span class="nom">Patrice Bergeron</span>
-                                <span class="no">#37</span>
-                                <span class="equipe">Boston Bruins</span>
-                                <span class="annee">2014</span>
-                                <span class="serie">UpperDeck</span>
-                            </div>
-                        </div>
-                        <div class="col-md-4 card-container no-image">
-                            <img src="/images/card-placeholder.png" class="img-thumbnail">
-                            <div class="data">
-                                <span class="nom">Mark Stone</span>
-                                <span class="no">#61</span>
-                                <span class="equipe">Ottawa Senators</span>
-                                <span class="annee">2013</span>
-                                <span class="serie">UpperDeck</span>
-                            </div>
-                        </div>
-                        <div class="col-md-4 card-container no-image">
-                            <img src="/images/card-placeholder.png" class="img-thumbnail">
-                            <div class="data">
-                                <span class="nom">Daniel Sedin</span>
-                                <span class="no">#22</span>
-                                <span class="equipe">Vancouver Canucks</span>
-                                <span class="annee">2014</span>
-                                <span class="serie">UpperDeck</span>
-                            </div>
-                        </div>
-                        <div class="col-md-4 card-container no-image">
-                            <img src="/images/card-placeholder.png" class="img-thumbnail">
-                            <div class="data">
-                                <span class="nom">Nikita Kucherov</span>
-                                <span class="no">#86</span>
-                                <span class="equipe">Tampa Bay Lightning</span>
-                                <span class="annee">2015</span>
-                                <span class="annee">2015</span>
-                                <span class="serie">UpperDeck</span>
-                            </div>
-                        </div>
-                        <div class="col-md-4 card-container no-image">
-                            <img src="/images/card-placeholder.png" class="img-thumbnail">
-                            <div class="data">
-                                <span class="nom">Kris Letang</span>
-                                <span class="no">#58</span>
-                                <span class="equipe">Pittsburgh Penguins</span>
-                                <span class="annee">2013</span>
-                                <span class="serie">UpperDeck</span>
-                            </div>
-                        </div>
-                        <div class="col-md-4 card-container no-image">
-                            <img src="/images/card-placeholder.png" class="img-thumbnail">
-                            <div class="data">
-                                <span class="nom">John Tavares</span>
-                                <span class="no">#91</span>
-                                <span class="equipe">New York Islanders</span>
-                                <span class="annee">2012</span>
-                                <span class="serie">UpperDeck</span>
-                            </div>
-                        </div>
-                        <div class="col-md-4 card-container no-image">
-                            <img src="/images/card-placeholder.png" class="img-thumbnail">
-                            <div class="data">
-                                <span class="nom">Jaromir Jagr</span>
-                                <span class="no">#68</span>
-                                <span class="equipe">Florida Panthers</span>
-                                <span class="annee">2015</span>
-                                <span class="serie">UpperDeck</span>
-                            </div>
-                        </div>
-                        <div class="col-md-4 card-container no-image"><img src="/images/dummies/dummy-01.jpg" alt="" class="img-thumbnail"></div>
-                        <div class="col-md-4 card-container no-image"><img src="/images/dummies/dummy-02.jpg" alt="" class="img-thumbnail"></div>
-                        <div class="col-md-4 card-container">
-                            <img src="/images/dummies/dummy-03.jpg"  alt="..." class="img-thumbnail">
-                            <div class="data">
-                                <span class="nom">Alex Ovechkin</span>
-                                <span class="no">#8</span>
-                                <span class="equipe">Washington Capitals</span>
-                                <span class="annee">2015</span>
-                                <span class="serie">UpperDeck</span>
-                            </div>
-                        </div>
-                        <div class="col-md-4 card-container"><img src="/images/dummies/dummy-04.jpg" alt="" class="img-thumbnail"></div>
-                        <div class="col-md-4 card-container"><img src="/images/dummies/dummy-05.jpg" alt="" class="img-thumbnail"></div>
-                    </div>
-					<div class="col-md-12">
-						<nav class="pull-right">
-							<ul class="pagination">
-								<li>
-									<a class="previous" href="?page=" aria-label="Previous">
-										<span aria-hidden="true">&laquo;</span>
-									</a>
-								</li>
-								<li><a href="?page=1">1</a></li>
-								<li><a href="?page=2">2</a></li>
-								<li><a href="?page=3">3</a></li>
-								<li><a href="?page=4">4</a></li>
-								<li><a href="?page=5">5</a></li>
-								<li>
-									<a class="next" href="?page=" aria-label="Next">
-										<span aria-hidden="true">&raquo;</span>
-									</a>
-								</li>
-							</ul>
-						</nav>
-					</div>
-				</fieldset>
-			</form>
-		</div>
-	</div>
-	<!-- /.container -->
+  <!-- Navigation (insérée par JS) -->
+  <!-- Page Content -->
+  <div id="pageView">
+    <div class="container">
+      <form class="form-horizontal">
+        <fieldset>
+          <!-- Form Name -->
+          <legend>Cartables : Mes plus rare</legend>
+          <div class="col-md-12">
+            <nav>
+              <ul class="pagination">
+                <li>
+                  <a class="previous" href="?page=" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li><a href="?page=1">1</a></li>
+                <li><a href="?page=2">2</a></li>
+                <li><a href="?page=3">3</a></li>
+                <li><a href="?page=4">4</a></li>
+                <li><a href="?page=5">5</a></li>
+                <li>
+                  <a class="next" href="?page=" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="cartable-card-container">
+            <div class="col-md-4 card-container">
+              <img src="/images/dummies/dummy-06.jpg" alt="..." class="img-thumbnail">
+              <div class="data">
+                <span>Sidney Crosby</span>
+                <span>#87</span>
+                <span>Pittsburgh Penguins</span>
+                <span>2005</span>
+                <span>UpperDeck</span>
+              </div>
+            </div>
+            <div class="col-md-4 card-container no-image">
+              <img src="/images/card-placeholder.png" class="img-thumbnail">
+              <div class="data">
+                <span class="nom">Sidney Crosby</span>
+                <span class="no">#87</span>
+                <span class="equipe">Pittsburgh Penguins</span>
+                <span class="annee">2005</span>
+                <span class="serie">UpperDeck</span>
+              </div>
+            </div>
+            <div class="col-md-4 card-container no-image">
+              <img src="/images/card-placeholder.png" class="img-thumbnail">
+              <div class="data">
+                <span class="nom">PK Subban</span>
+                <span class="no">#76</span>
+                <span class="equipe">Montreal Canadians</span>
+                <span class="annee">2011</span>
+                <span class="serie">UpperDeck</span>
+              </div>
+            </div>
+            <div class="col-md-4 card-container no-image">
+              <img src="/images/card-placeholder.png" class="img-thumbnail">
+              <div class="data">
+                <span class="nom">Erik Karlsson</span>
+                <span class="no">#65</span>
+                <span class="equipe">Ottawa Senators</span>
+                <span class="annee">2013</span>
+                <span class="serie">UpperDeck</span>
+              </div>
+            </div>
+            <div class="col-md-4 card-container no-image">
+              <img src="/images/card-placeholder.png" class="img-thumbnail">
+              <div class="data">
+                <span class="nom">Alex Ovechkin</span>
+                <span class="no">#8</span>
+                <span class="equipe">Washington Capitals</span>
+                <span class="annee">2015</span>
+                <span class="serie">UpperDeck</span>
+              </div>
+            </div>
+            <div class="col-md-4 card-container no-image">
+              <img src="/images/card-placeholder.png"  class="img-thumbnail">
+              <div class="data">
+                <span class="nom">Tyler Seguin</span>
+                <span class="no">#91</span>
+                <span class="equipe">Dallas Stars</span>
+                <span class="annee">2015</span>
+                <span class="serie">UpperDeck</span>
+              </div>
+            </div>
+            <div class="col-md-4 card-container no-image">
+              <img src="/images/card-placeholder.png" class="img-thumbnail">
+              <div class="data">
+                <span class="nom">Patrice Bergeron</span>
+                <span class="no">#37</span>
+                <span class="equipe">Boston Bruins</span>
+                <span class="annee">2014</span>
+                <span class="serie">UpperDeck</span>
+              </div>
+            </div>
+            <div class="col-md-4 card-container no-image">
+              <img src="/images/card-placeholder.png" class="img-thumbnail">
+              <div class="data">
+                <span class="nom">Mark Stone</span>
+                <span class="no">#61</span>
+                <span class="equipe">Ottawa Senators</span>
+                <span class="annee">2013</span>
+                <span class="serie">UpperDeck</span>
+              </div>
+            </div>
+            <div class="col-md-4 card-container no-image">
+              <img src="/images/card-placeholder.png" class="img-thumbnail">
+              <div class="data">
+                <span class="nom">Daniel Sedin</span>
+                <span class="no">#22</span>
+                <span class="equipe">Vancouver Canucks</span>
+                <span class="annee">2014</span>
+                <span class="serie">UpperDeck</span>
+              </div>
+            </div>
+            <div class="col-md-4 card-container no-image">
+              <img src="/images/card-placeholder.png" class="img-thumbnail">
+              <div class="data">
+                <span class="nom">Nikita Kucherov</span>
+                <span class="no">#86</span>
+                <span class="equipe">Tampa Bay Lightning</span>
+                <span class="annee">2015</span>
+                <span class="annee">2015</span>
+                <span class="serie">UpperDeck</span>
+              </div>
+            </div>
+            <div class="col-md-4 card-container no-image">
+              <img src="/images/card-placeholder.png" class="img-thumbnail">
+              <div class="data">
+                <span class="nom">Kris Letang</span>
+                <span class="no">#58</span>
+                <span class="equipe">Pittsburgh Penguins</span>
+                <span class="annee">2013</span>
+                <span class="serie">UpperDeck</span>
+              </div>
+            </div>
+            <div class="col-md-4 card-container no-image">
+              <img src="/images/card-placeholder.png" class="img-thumbnail">
+              <div class="data">
+                <span class="nom">John Tavares</span>
+                <span class="no">#91</span>
+                <span class="equipe">New York Islanders</span>
+                <span class="annee">2012</span>
+                <span class="serie">UpperDeck</span>
+              </div>
+            </div>
+            <div class="col-md-4 card-container no-image">
+              <img src="/images/card-placeholder.png" class="img-thumbnail">
+              <div class="data">
+                <span class="nom">Jaromir Jagr</span>
+                <span class="no">#68</span>
+                <span class="equipe">Florida Panthers</span>
+                <span class="annee">2015</span>
+                <span class="serie">UpperDeck</span>
+              </div>
+            </div>
+            <div class="col-md-4 card-container no-image"><img src="/images/dummies/dummy-01.jpg" alt="" class="img-thumbnail"></div>
+            <div class="col-md-4 card-container no-image"><img src="/images/dummies/dummy-02.jpg" alt="" class="img-thumbnail"></div>
+            <div class="col-md-4 card-container">
+              <img src="/images/dummies/dummy-03.jpg"  alt="..." class="img-thumbnail">
+              <div class="data">
+                <span class="nom">Alex Ovechkin</span>
+                <span class="no">#8</span>
+                <span class="equipe">Washington Capitals</span>
+                <span class="annee">2015</span>
+                <span class="serie">UpperDeck</span>
+              </div>
+            </div>
+            <div class="col-md-4 card-container"><img src="/images/dummies/dummy-04.jpg" alt="" class="img-thumbnail"></div>
+            <div class="col-md-4 card-container"><img src="/images/dummies/dummy-05.jpg" alt="" class="img-thumbnail"></div>
+          </div>
+          <div class="col-md-12">
+            <nav class="pull-right">
+              <ul class="pagination">
+                <li>
+                  <a class="previous" href="?page=" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li><a href="?page=1">1</a></li>
+                <li><a href="?page=2">2</a></li>
+                <li><a href="?page=3">3</a></li>
+                <li><a href="?page=4">4</a></li>
+                <li><a href="?page=5">5</a></li>
+                <li>
+                  <a class="next" href="?page=" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  <!-- /.container -->
 
-	<!-- jQuery Version 1.11.1 -->
-	<script src="/js/jquery.js"></script>
+  <!-- jQuery Version 1.11.1 -->
+  <script src="/js/jquery.js"></script>
 
-	<!-- Bootstrap Core JavaScript -->
-	<script src="/js/bootstrap.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="/js/bootstrap.min.js"></script>
 
-	<script src="/js/app.js"></script>
+  <script src="/js/app.js"></script>
 
-	<script type="text/javascript">
-		$(function(){
-			var queryParams = $.getQueryParameters();
-			var page = 1;
-			if (typeof queryParams.page != 'undefined' && queryParams.page != null) {
-				page = queryParams.page;
-			}
-            
-			$(".pagination li").find("a[href='?page="+page+"']").parent().addClass("active");
-            $(".pagination li a.previous").attr("href",$(".pagination li a.previous").attr("href") + Math.max(1, parseInt(page)-1));
-            $(".pagination li a.next").attr("href",$(".pagination li a.next").attr("href") + Math.min(5, parseInt(page)+1));
-            $(".cartable-card-container").randomize("div.card-container");
-            $(".cartable-card-container").find(".card-container:nth-last-child(-n+9)").remove();
-		});
-	</script>
+  <script type="text/javascript">
+    $(function(){
+      var queryParams = $.getQueryParameters();
+      var page = 1;
+      if (typeof queryParams.page != 'undefined' && queryParams.page != null) {
+        page = queryParams.page;
+      }
+
+      $(".pagination li").find("a[href='?page="+page+"']").parent().addClass("active");
+      $(".pagination li a.previous").attr("href",$(".pagination li a.previous").attr("href") + Math.max(1, parseInt(page)-1));
+      $(".pagination li a.next").attr("href",$(".pagination li a.next").attr("href") + Math.min(5, parseInt(page)+1));
+      $(".cartable-card-container").randomize("div.card-container");
+      $(".cartable-card-container").find(".card-container:nth-last-child(-n+9)").remove();
+    });
+  </script>
 
 </body>
 
