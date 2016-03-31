@@ -85,7 +85,7 @@ $(function () {
     
     var bodyCartableCarte = $('#bodyTableCartes');
     
-    for (var i = 0; i != 3; i++) {
+    for (var i = 0; i != 2; i++) {
         bodyCartableCarte.append(tableRow);
     }
     
