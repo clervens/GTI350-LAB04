@@ -121,7 +121,7 @@
       <form class="form-horizontal">
         <fieldset>
           <!-- Form Name -->
-          <legend>Cartables : Mes plus rare</legend>
+          <legend></legend>
           <div class="col-md-12">
             <nav>
               <ul class="pagination">
@@ -338,6 +338,15 @@
       $(".pagination li a.next").attr("href",$(".pagination li a.next").attr("href") + Math.min(5, parseInt(page)+1));
       $(".cartable-card-container").randomize("div.card-container");
       $(".cartable-card-container").find(".card-container:nth-last-child(-n+9)").remove();
+
+      if (!!queryParams.cartable) {
+        $(".pagination li a").each(function() {
+            $(this).attr("href", $(this).attr("href") + "&cartable=" + queryParams.cartable);
+        });
+        $('legend').text("Cartable : " + decodeURIComponent(queryParams.cartable));
+      } else {
+        $('legend').text("Cartables : Mes plus rare");
+      }
     });
   </script>
 
