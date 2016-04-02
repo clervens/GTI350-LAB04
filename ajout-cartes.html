@@ -66,7 +66,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="lblNom">Nom du joueur</label>
             <div class="col-md-4">
-                <input id="lblNom" name="lblNom" type="text" placeholder="" class="form-control input-md">
+                <input id="lblNom" name="lblNom" type="text" placeholder="" class="form-control input-md input-nom" data-provide="typeahead" autocomplete="off">
 
             </div>
         </div>
@@ -74,8 +74,8 @@
         <!-- Text input-->
         <div class="form-group">
             <label class="col-md-4 control-label" for="lblNo">No du joueur</label>
-            <div class="col-md-2">
-                <input id="lblNo" name="lblNo" type="number" value="99" min="1" max="99" placeholder="" class="form-control input-md">
+            <div class="col-md-1">
+                <input id="lblNo" name="lblNo" type="number" value="99" min="1" max="99" placeholder="" class="form-control">
             </div>
         </div>
 
@@ -83,7 +83,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="lblEquipe">Équipe</label>
             <div class="col-md-4">
-                <input id="lblEquipe" name="lblEquipe" type="text" placeholder="" class="form-control input-md">
+                <input id="lblEquipe" name="lblEquipe" type="text" placeholder="" class="form-control input-md input-equipe" data-provide="typeahead" autocomplete="off">
 
             </div>
         </div>
@@ -91,7 +91,7 @@
         <!-- Select Basic -->
         <div class="form-group">
             <label class="col-md-4 control-label" for="dropDownAnnee">Année</label>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <select id="dropDownAnnee" name="dropDownAnnee" class="form-control dropDownAnnee">
                 </select>
             </div>
@@ -101,44 +101,31 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="lblSerie">Série</label>
             <div class="col-md-4">
-                <input id="lblSerie" name="lblSerie" type="text" placeholder="" class="form-control input-md">
-
+                <input id="lblSerie" name="lblSerie" type="text" placeholder="" class="form-control input-md input-serie" data-provide="typeahead" autocomplete="off">
             </div>
         </div>
 
         <!-- Select Basic -->
         <div class="form-group">
             <label class="col-md-4 control-label" for="dropDownEtat">État</label>
-            <div class="col-md-4">
-                <select id="dropDownEtat" name="dropDownEtat" class="form-control dropDownEtat">
-
-                </select>
+            <div class="col-md-2">
+                <select id="dropDownEtat" name="dropDownEtat" class="form-control dropDownEtat"></select>
             </div>
         </div>
 
         <!-- Text input-->
         <div class="form-group">
             <label class="col-md-4 control-label" for="lblQuantity">Quantité</label>
-            <div class="col-md-2">
-                <input id="lblQuantity" name="lblQuantity" type="number" value="1" min="1" max="99" class="form-control input-md">
+            <div class="col-md-1">
+                <input id="lblQuantity" name="lblQuantity" type="number" value="1" min="1" max="99" class="form-control">
             </div>
         </div>
 
         <!-- Textarea -->
-<!--
         <div class="form-group">
             <label class="col-md-4 control-label" for="txtAreadCommentaire">Commentaires</label>
             <div class="col-md-4">
                 <textarea class="form-control" id="txtAreadCommentaire" placeholder="Vos commentaires ici..." name="txtAreadCommentaire"></textarea>
-            </div>
-        </div>
--->
-
-        <!-- File Button -->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="lblImage">Image</label>
-            <div class="col-md-4">
-                <input id="lblImage" name="lblImage" class="input-file" type="file">
             </div>
         </div>
       </div>
@@ -146,7 +133,7 @@
   </div>
 </div>
 
-                    <table class="table table-striped table-hover table-responsive">
+<table class="table table-striped table-hover table-responsive">
 	<thead>
 		<tr>
 			<th>Nom de joueur</th>
@@ -156,27 +143,62 @@
             <th>Série</th>
 			<th>État</th>
 			<th>Quantité</th>
+            <th>Image/Commentaires</th>
             <th>Retirer</th>
 		</tr>
 	</thead>
 	<tbody id="bodyTableCartes">
                         </tbody>
 </table>
+
+<div class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Image et commentaires</h4>
+      </div>
+      <div class="modal-body">
+        
+          <!-- File Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="lblImage">Image</label>
+            <div class="col-md-4">
+                <input id="lblImage" name="lblImage" class="input-file" type="file">
+            </div>
+        </div>
+          
+          <!-- Textarea -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="txtAreadCommentaire">Commentaires</label>
+            <div class="col-md-6">
+                <textarea class="form-control" id="txtAreadCommentaire" placeholder="Vos commentaires ici..." name="txtAreadCommentaire"></textarea>
+            </div>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Confirmer</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
                     
 <button type="button" class="btn btn-default btn-ajout-carte" aria-label="Left Align">
   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 </button>
 
-                    <!-- Button (Double) -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="lblImage"></label>
-                        <div class="col-md-8">
-                            <input name="boutonAjouterCartes" type="submit" class="btn btn-primary" value="Ajouter à ma collection">
-                        </div>
-                    </div>
+        <!-- Button (Double) -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="lblImage"></label>
+            <div class="col-md-8">
+                <input name="boutonAjouterCartes" type="submit" class="btn btn-primary" value="Ajouter à ma collection">
+            </div>
+        </div>
 
-                </fieldset>
-            </form>
+    </fieldset>
+    </form>
 
             <a href="mes-cartes.html">&#60;&#60; Mes cartes</a>
         </div>
@@ -189,6 +211,8 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
+    <script src="js/bootstrap3-typeahead.min.js"></script>
+    
     <script src="js/app.js"></script>
 
     <script src="js/ajout-cartes.js"></script>

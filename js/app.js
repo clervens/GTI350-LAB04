@@ -32,8 +32,10 @@ jQuery.extend({
 });
 
 var model = {
-    "etats": ["Protégée","Impécable","Légèrement abîmée","Abîmée","Au bord du gouffre"]
-
+    "etats": ["Impécable","Légèrement abîmée","Abîmée", "Protégée"],
+    "nom_joueurs": ["Sidney Crosby", "Martin Brodeur", "P.K. Subban"],
+    "equipes": ["BlackHawks", "Bruins", "Canadiens", "Red Wings", "Sharks", "Penguins"],
+    "series": ["O-Pee-Chee", "Upper Deck", "SPx", "Ultra", "Black Diamond"]
 }
 
 $.fn.randomize = function(childElem) {
