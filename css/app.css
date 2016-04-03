@@ -35,3 +35,12 @@ img.profile-picture {
 .nom-cartable-form-group {
     text-align: left;
 }
+
+#lblNbCartesCartable {
+    display: inline-block;
+    width: 35px;
+}
+
+.dropdown:hover .dropdown-menu {
+   display: block;
+}
