@@ -27,3 +27,11 @@ img.profile-picture {
   margin-bottom: -6px;
   height: 35px;
 }
+
+.alert {
+    display: none;
+}
+
+.nom-cartable-form-group {
+    text-align: left;
+}
