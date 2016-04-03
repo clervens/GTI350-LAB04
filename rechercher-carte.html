@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="Équipe 9">
+
+	<title>Carrtable de la communauté</title>
+
+	<!-- Bootstrap Core CSS -->
+	<link href="/css/bootstrap.custom.min.css" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<style>
+		body {
+			padding-top: 70px;
+			/* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+		}
+		#tableRecherche, #tableRecherche th {
+			text-align: center !important;
+		}
+		#tableRecherche tbody tr {
+			cursor: pointer;
+		}
+	</style>
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+
+	<!-- Navigation (insérée par JS) -->
+
+
+	<!-- Page Content -->
+	<div id="pageView">
+		<div class="container">
+			<form class="form-horizontal row">
+				<fieldset>
+					<div class="col-md-12">
+						<!-- Form Name -->
+						<legend>Recherche de cartes</legend>
+					</div>
+					<div class="col-md-12">
+						<div class="input-group">
+							<input type="text" class="form-control" id="exampleInputAmount" placeholder="Nom de Joueur ou Propriétaire...">
+							<div class="input-group-btn">
+								<a id="search" class="btn btn-primary" onclick="return false;">Rechercher</a>
+							</div>
+						</div>
+						<div class="panel-group" id="accordion">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<a class="accordion-toggle collapsed panel-title" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+										<h4 class="panel-title">Recherche avancée</h4>
+									</a>
+								</div>
+								<div id="collapseOne" class="panel-collapse collapse">
+									<div class="panel-body">
+										<!-- Text input-->
+										<div class="form-group">
+											<label class="col-md-4 control-label" for="lblNom">Nom du joueur</label>
+											<div class="col-md-4">
+												<input id="lblNom" name="lblNom" type="text" placeholder="ex. : Carey Price" class="form-control input-md">
+
+											</div>
+										</div>
+
+										<!-- Text input-->
+										<div class="form-group">
+											<label class="col-md-4 control-label" for="lblNo">Propriétaire</label>
+											<div class="col-md-2">
+												<input id="lblNo" name="lblNo" type="text" placeholder="ex. : Sean Clarke" class="form-control input-md">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="search-results-container" style="display: none;">
+						<div class="col-md-12">
+							<nav>
+								<ul class="pagination">
+									<li>
+										<a class="previous" href="?page=" aria-label="Previous">
+											<span aria-hidden="true">&laquo;</span>
+										</a>
+									</li>
+									<li><a href="?page=1">1</a></li>
+									<li><a href="?page=2">2</a></li>
+									<li><a href="?page=3">3</a></li>
+									<li><a href="?page=4">4</a></li>
+									<li><a href="?page=5">5</a></li>
+									<li>
+										<a class="next" href="?page=" aria-label="Next">
+											<span aria-hidden="true">&raquo;</span>
+										</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<div class="col-md-12">
+							<table id="tableRecherche" class="table table-striped table-bordered table-hover">
+								<thead>
+									<tr>
+										<th>Nom de Joueur</th>
+										<th>No joueur</th>
+										<th>Équipe</th>
+										<th>Année</th>
+										<th>État</th>
+										<th>Quantité</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sidney Crosby</td>
+										<td>87</td>
+										<td>Pittburgh Pemguins</td>
+										<td>2014</td>
+										<td class="etat">Protégée</td>
+										<td>2</td>
+										<td><span class="glyphicon glyphicon-trash"></span></td>
+									</tr>
+									<tr>
+										<td>PK Subban</td>
+										<td>#76</td>
+										<td>Montreal Canadians</td>
+										<td>2011</td>
+										<td class="etat">Protégée</td>
+										<td class="qty">3</td>
+										<td><span class="glyphicon glyphicon-trash"></span></td>
+									</tr>
+
+
+									<tr>
+										<td>Erik Karlsson</td>
+										<td>#65</td>
+										<td>Ottawa Senators</td>
+										<td>2013</td>
+										<td class="etat">Protégée</td>
+										<td class="qty">3</td>
+										<td><span class="glyphicon glyphicon-trash"></span></td>
+									</tr>
+
+
+									<tr>
+										<td>Alex Ovechkin</td>
+										<td>#8</td>
+										<td>Washington Capitals</td>
+										<td>2015</td>
+										<td class="etat">Protégée</td>
+										<td class="qty">3</td>
+										<td><span class="glyphicon glyphicon-trash"></span></td>
+									</tr>
+
+
+									<tr>
+										<td>Tyler Seguin</td>
+										<td>#91</td>
+										<td>Dallas Stars</td>
+										<td>2015</td>
+										<td class="etat">Protégée</td>
+										<td class="qty">3</td>
+										<td><span class="glyphicon glyphicon-trash"></span></td>
+									</tr>
+
+
+									<tr>
+										<td>Patrice Bergeron</td>
+										<td>#37</td>
+										<td>Boston Bruins</td>
+										<td>2014</td>
+										<td class="etat">Protégée</td>
+										<td class="qty">3</td>
+										<td><span class="glyphicon glyphicon-trash"></span></td>
+									</tr>
+
+
+									<tr>
+										<td>Mark Stone</td>
+										<td>#61</td>
+										<td>Ottawa Senators</td>
+										<td>2013</td>
+										<td class="etat">Protégée</td>
+										<td class="qty">3</td>
+										<td><span class="glyphicon glyphicon-trash"></span></td>
+									</tr>
+
+
+									<tr>
+										<td>Daniel Sedin</td>
+										<td>#22</td>
+										<td>Vancouver Canucks</td>
+										<td>2014</td>
+										<td class="etat">Protégée</td>
+										<td class="qty">3</td>
+										<td><span class="glyphicon glyphicon-trash"></span></td>
+									</tr>
+
+
+									<tr>
+										<td>Nikita Kucherov</td>
+										<td>#86</td>
+										<td>Tampa Bay Lightning</td>
+										<td>2015</td>
+										<td class="etat">Protégée</td>
+										<td class="qty">3</td>
+										<td><span class="glyphicon glyphicon-trash"></span></td>
+									</tr>
+
+									<tr>
+										<td>Kris Letang</td>
+										<td>#58</td>
+										<td>Pittsburgh Penguins</td>
+										<td>2013</td>
+										<td class="etat">Protégée</td>
+										<td class="qty">3</td>
+										<td><span class="glyphicon glyphicon-trash"></span></td>
+									</tr>
+
+
+									<tr>
+										<td>John Tavares</td>
+										<td>#91</td>
+										<td>New York Islanders</td>
+										<td>2012</td>
+										<td class="etat">Protégée</td>
+										<td class="qty">3</td>
+										<td><span class="glyphicon glyphicon-trash"></span></td>
+									</tr>
+
+
+									<tr>
+										<td>Jaromir Jagr</td>
+										<td>#68</td>
+										<td>Florida Panthers</td>
+										<td>2015</td>
+										<td class="etat">Protégée</td>
+										<td class="qty">3</td>
+										<td><span class="glyphicon glyphicon-trash"></span></td>
+									</tr>
+
+
+									<tr>
+										<td>Alex Ovechkin</td>
+										<td>#8</td>
+										<td>Washington Capitals</td>
+										<td>2015</td>
+										<td class="etat">Protégée</td>
+										<td class="qty">3</td>
+										<td><span class="glyphicon glyphicon-trash"></span></td>
+									</tr>
+
+
+									<tr>
+										<td>Zdeno Chara</td>
+										<td>#33</td>
+										<td>Boston Bruins</td>
+										<td>2014</td>
+										<td class="etat">Protégée</td>
+										<td class="qty">3</td>
+										<td><span class="glyphicon glyphicon-trash"></span></td>
+									</tr>
+
+
+									<tr>
+										<td>Bobby Hull</td>
+										<td>#9</td>
+										<td>Winnipeg Jets</td>
+										<td>1979</td>
+										<td class="etat">Protégée</td>
+										<td class="qty">3</td>
+										<td><span class="glyphicon glyphicon-trash"></span></td>
+									</tr>
+
+
+									<tr>
+										<td>Steven Stamkos</td>
+										<td>#91</td>
+										<td>Tampa Bay Lightings</td>
+										<td>2013</td>
+										<td class="etat">Protégée</td>
+										<td class="qty">3</td>
+										<td><span class="glyphicon glyphicon-trash"></span></td>
+									</tr>
+
+
+									<tr>
+										<td>Guy Lafleur</td>
+										<td>#10</td>
+										<td>Quebec Nordics</td>
+										<td>1990</td>
+										<td class="etat">Protégée</td>
+										<td class="qty">3</td>
+										<td><span class="glyphicon glyphicon-trash"></span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="col-md-12">
+							<nav class="pull-right">
+								<ul class="pagination">
+									<li>
+										<a class="previous" href="?page=" aria-label="Previous">
+											<span aria-hidden="true">&laquo;</span>
+										</a>
+									</li>
+									<li><a href="?page=1">1</a></li>
+									<li><a href="?page=2">2</a></li>
+									<li><a href="?page=3">3</a></li>
+									<li><a href="?page=4">4</a></li>
+									<li><a href="?page=5">5</a></li>
+									<li>
+										<a class="next" href="?page=" aria-label="Next">
+											<span aria-hidden="true">&raquo;</span>
+										</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	<!-- /.container -->
+
+	<!-- jQuery Version 1.11.1 -->
+	<script src="/js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="/js/bootstrap.min.js"></script>
+
+	<script src="/js/app.js"></script>
+
+	<script type="text/javascript">
+		$(function(){
+			var queryParams = $.getQueryParameters();
+			var page = 1;
+			if (typeof queryParams.page != 'undefined' && queryParams.page != null) {
+				page = queryParams.page;
+				if (!!queryParams.page) {
+					$(".search-results-container").show();
+				}
+			}
+
+			$(".pagination li").find("a[href='?page="+page+"']").parent().addClass("active");
+			$(".pagination li a.previous").attr("href",$(".pagination li a.previous").attr("href") + Math.max(1, parseInt(page)-1));
+			$(".pagination li a.next").attr("href",$(".pagination li a.next").attr("href") + Math.min(5, parseInt(page)+1));
+			$("#tableRecherche tbody").randomize("tr");
+                $("#tableRecherche tbody").find("tr:nth-last-child(-n+7)").remove();
+
+            $("#tableRecherche tbody tr").on('click', function(){
+                document.location = "/cartables/consultation.html?cartable=" + $(this).find(".proprietaire").text();
+            });
+
+            $('input[type=text]').on('input', function(){
+                $("#tableRecherche tbody").randomize("tr");
+            });
+
+            $('#search').on('click', function(){
+                $(".search-results-container").show();
+            });
+            
+            $('.qty').each(function(){
+                $(this).text(Math.floor(Math.random() * 3) + 1);
+            });
+            
+            $('.etat').each(function(){
+                $(this).text(model.etats[Math.floor(Math.random() * model.etats.length)]);
+            });
+
+        });
+</script>
+</body>
+
+</html>
