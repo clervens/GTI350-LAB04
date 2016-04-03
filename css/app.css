@@ -44,3 +44,8 @@ img.profile-picture {
 .dropdown:hover .dropdown-menu {
    display: block;
 }
+
+.navbar-brand img {
+  height: 30px;
+  margin: -6px 0;
+}
