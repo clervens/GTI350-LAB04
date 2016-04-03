@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="Équipe 9">
 
-	<title>Carrtable de la communauté</title>
+	<title>Mes cartes</title>
 
 	<!-- Bootstrap Core CSS -->
 	<link href="/css/bootstrap.custom.min.css" rel="stylesheet">
@@ -49,11 +49,11 @@
 				<fieldset>
 					<div class="col-md-12">
 						<!-- Form Name -->
-						<legend>Recherche de cartes</legend>
+						<legend>Recherche de cartes : mes cartes</legend>
 					</div>
 					<div class="col-md-12">
 						<div class="input-group">
-							<input type="text" class="form-control" id="exampleInputAmount" placeholder="Nom de Joueur ou Propriétaire...">
+							<input type="text" class="form-control" id="exampleInputAmount" placeholder="Nom de Joueur...">
 							<div class="input-group-btn">
 								<a id="search" class="btn btn-primary" onclick="return false;">Rechercher</a>
 							</div>
@@ -67,48 +67,92 @@
 								</div>
 								<div id="collapseOne" class="panel-collapse collapse">
 									<div class="panel-body">
-										<!-- Text input-->
 										<div class="form-group">
-											<label class="col-md-4 control-label" for="lblNom">Nom du joueur</label>
-											<div class="col-md-4">
-												<input id="lblNom" name="lblNom" type="text" placeholder="ex. : Carey Price" class="form-control input-md">
+                                            <label class="col-md-4 control-label" for="lblNom">Nom du joueur</label>
+                                            <div class="col-md-4">
+                                                <input id="lblNom" name="lblNom" type="text" placeholder="" class="form-control input-md input-nom" data-provide="typeahead" autocomplete="off">
+                                            </div>
+                                        </div>
 
-											</div>
-										</div>
+                                        <!-- Text input-->
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="lblNo">No du joueur</label>
+                                            <div class="col-md-1">
+                                                <input id="lblNo" name="lblNo" type="number" value="99" min="1" max="99" placeholder="" class="form-control">
+                                            </div>
+                                        </div>
 
-										<!-- Text input-->
-										<div class="form-group">
-											<label class="col-md-4 control-label" for="lblNo">Propriétaire</label>
-											<div class="col-md-2">
-												<input id="lblNo" name="lblNo" type="text" placeholder="ex. : Sean Clarke" class="form-control input-md">
-											</div>
-										</div>
+                                        <!-- Text input-->
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="lblEquipe">Équipe</label>
+                                            <div class="col-md-4">
+                                                <input id="lblEquipe" name="lblEquipe" type="text" placeholder="" class="form-control input-md input-equipe" data-provide="typeahead" autocomplete="off">
+
+                                            </div>
+                                        </div>
+
+                                        <!-- Select Basic -->
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="dropDownAnnee">Année</label>
+                                            <div class="col-md-2">
+                                                <select id="dropDownAnnee" name="dropDownAnnee" class="form-control dropDownAnnee">
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <!-- Text input-->
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="lblSerie">Série</label>
+                                            <div class="col-md-4">
+                                                <input id="lblSerie" name="lblSerie" type="text" placeholder="" class="form-control input-md input-serie" data-provide="typeahead" autocomplete="off">
+                                            </div>
+                                        </div>
+
+                                        <!-- Select Basic -->
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="dropDownEtat">État</label>
+                                            <div class="col-md-2">
+                                                <select id="dropDownEtat" name="dropDownEtat" class="form-control dropDownEtat"></select>
+                                            </div>
+                                        </div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="search-results-container" style="display: none;">
+					<div class="search-results-container" style="display: none; padding-top: 30px;">
+                        <div class="row">
+                            <div class="col-md-6" style="text-align:center">Nombre de résultat : 50</div>
+                            <div class="col-md-6" style="text-align:center">
+                                Nombre de résultats par page 
+                                <select name="" id="" disabled>
+                                    <option value="">10</option>
+                                    <option value="">15</option>
+                                    <option value="">20</option>
+                                    <option value="">40</option>
+                                    <option value="">50</option>
+                                    <option value="">100</option>
+                                </select>
+                            </div>
+                        </div>
 						<div class="col-md-12">
-							<nav>
-								<ul class="pagination">
-									<li>
-										<a class="previous" href="?page=" aria-label="Previous">
-											<span aria-hidden="true">&laquo;</span>
-										</a>
-									</li>
-									<li><a href="?page=1">1</a></li>
-									<li><a href="?page=2">2</a></li>
-									<li><a href="?page=3">3</a></li>
-									<li><a href="?page=4">4</a></li>
-									<li><a href="?page=5">5</a></li>
-									<li>
-										<a class="next" href="?page=" aria-label="Next">
-											<span aria-hidden="true">&raquo;</span>
-										</a>
-									</li>
-								</ul>
-							</nav>
+                            <ul class="pagination">
+                                <li>
+                                    <a class="previous" href="?page=" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li><a href="?page=1">1</a></li>
+                                <li><a href="?page=2">2</a></li>
+                                <li><a href="?page=3">3</a></li>
+                                <li><a href="?page=4">4</a></li>
+                                <li><a href="?page=5">5</a></li>
+                                <li>
+                                    <a class="next" href="?page=" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
 						</div>
 						<div class="col-md-12">
 							<table id="tableRecherche" class="table table-striped table-bordered table-hover">
@@ -335,6 +379,22 @@
 			</form>
 		</div>
 	</div>
+	<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    Comfirmation
+                </div>
+                <div class="modal-body">
+                    Blablabla... bla... blabla...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-danger btn-ok">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
 	<!-- /.container -->
 
 	<!-- jQuery Version 1.11.1 -->
@@ -362,8 +422,17 @@
 			$("#tableRecherche tbody").randomize("tr");
                 $("#tableRecherche tbody").find("tr:nth-last-child(-n+7)").remove();
 
-            $("#tableRecherche tbody tr").on('click', function(){
-                document.location = "/cartables/consultation.html?cartable=" + $(this).find(".proprietaire").text();
+            $("#tableRecherche tbody tr td:not(:last-child)").on('click', function(){
+                document.location = "/consulter-carte.html";
+            });
+            
+
+            $("#tableRecherche tbody tr td:last-child").on('click', function(){
+                $("#confirm-delete").modal();
+            });
+            
+            $('#confirm-delete').on('show.bs.modal', function(e) {
+                $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
             });
 
             $('input[type=text]').on('input', function(){
