@@ -41,7 +41,7 @@
     <div id="pageView">
         <div class="container">
 
-            <div class="alert alert-success succes-ajout-cartes" role="alert">
+            <div class="alert alert-success succes-ajout-cartable" role="alert">
                 <strong>Succès!</strong> Votre cartable a été créé.
             </div>
             
@@ -56,24 +56,23 @@
                     <div class="form-group">
                         <label class="col-md-1 control-label" for="lblNom" style="text-align: left; width: auto;">Nom</label>
                         <div class="col-md-3">
-                            <input name="nom" type="text" placeholder="" class="form-control input-md input-nom">
+                            <input name="nom" type="text" placeholder="" class="form-control input-md" required>
                         </div>
                     </div>
 
                 </fieldset>
+                
                 <fieldset>
-                    <legend>Cartes</legend>
+                    <legend>Sélection de cartes</legend>
+                    
                     <p>Nombre de cartes insérées : <span id="lblNbCartesCartable">0</span>
-                        <button type="button" class="btn btn-default btn-cartes-insereres">Consulter les cartes</button>
+                        <button type="button" class="btn btn-default btn-cartes-insereres">Consulter</button>
                     </p>
-                </fieldset>
-                <fieldset>
-                    <legend>Sélection</legend>
                      <div class="panel-group" id="accordion">
   <div class="panel panel-default">
     <div class="panel-heading">      
         <a class="accordion-toggle collapsed panel-title" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-          <h4 class="panel-title">Attributs communs</h4>
+          <h4 class="panel-title">Recherche dans mes cartes</h4>
         </a>      
     </div>
     <div id="collapseOne" class="panel-collapse collapse">
@@ -91,7 +90,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="lblNo">No du joueur</label>
             <div class="col-md-1">
-                <input id="lblNo" name="lblNo" type="number" value="99" min="1" max="99" placeholder="" class="form-control">
+                <input id="lblNo" name="lblNo" type="number" value="" min="1" max="99" placeholder="" class="form-control">
             </div>
         </div>
 
@@ -109,6 +108,7 @@
             <label class="col-md-4 control-label" for="dropDownAnnee">Année</label>
             <div class="col-md-2">
                 <select id="dropDownAnnee" name="dropDownAnnee" class="form-control dropDownAnnee">
+                    <option></option>
                 </select>
             </div>
         </div>
@@ -125,7 +125,9 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="dropDownEtat">État</label>
             <div class="col-md-2">
-                <select id="dropDownEtat" name="dropDownEtat" class="form-control dropDownEtat"></select>
+                <select id="dropDownEtat" name="dropDownEtat" class="form-control dropDownEtat">
+                <option></option>
+                </select>
             </div>
         </div>
 
@@ -133,22 +135,26 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="lblQuantity">Quantité</label>
             <div class="col-md-1">
-                <input id="lblQuantity" name="lblQuantity" type="number" value="1" min="1" max="99" class="form-control">
+                <input id="lblQuantity" name="lblQuantity" type="number" value="" min="1" max="99" class="form-control">
             </div>
         </div>
-
-        <!-- Textarea -->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="txtAreadCommentaire">Commentaires</label>
-            <div class="col-md-4">
-                <textarea class="form-control" id="txtAreadCommentaire" placeholder="Vos commentaires ici..." name="txtAreadCommentaire"></textarea>
-            </div>
-        </div>
+          
+          <!-- Button (Double) -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="lblImage"></label>
+                        <div class="col-md-8">
+                            <input name="boutonRechercherCartes" type="button" class="btn btn-default" value="Rechercher">
+                        </div>
+                    </div>
       </div>
     </div>
   </div>
 </div>
-                    <table class="table table-striped table-hover table-responsive">
+                    <h3></h3>
+                    <fieldset>
+                        <legend><h4>Résultats (4)</h4></legend>
+
+                    <table class="table-resultats table table-striped table-responsive">
                         <thead>
                             <tr>
                                 <th>Nom de joueur</th>
@@ -158,18 +164,58 @@
                                 <th>Série</th>
                                 <th>État</th>
                                 <th>Quantité</th>
-                                <th>Image/Commentaires</th>
-                                <th>Retirer</th>
+                                <th>Insérer</th>
                             </tr>
                         </thead>
-                        <tbody id="bodyTableCartes"></tbody>
+                        <tbody id="bodyTableCartes">
+                        <tr>
+                                                <td>Sidney Crosby</td>
+                                                <td>87</td>
+                                                <td>Penguins</td>
+                                                <td>2014</td>
+                                                <td>Upper Deck</td>
+                                                <td class="etat">Protégée</td>
+                                                <td>2</td>
+                                                <td><span class="btn glyphicon glyphicon-plus" style="top: 0; padding: 0; width: 100%; text-align: left;"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>P.K. Subban</td>
+                                                <td>#76</td>
+                                                <td>Canadiens</td>
+                                                <td>2011</td>
+                                                <td>Ultra</td>
+                                                <td class="etat">Protégée</td>
+                                                <td class="qty">3</td>
+                                                <td><span class="btn glyphicon glyphicon-plus" style="top: 0; padding: 0; width: 100%; text-align: left;"></span></td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td>Erik Karlsson</td>
+                                                <td>#65</td>
+                                                <td>Senators</td>
+                                                <td>2013</td>
+                                                <td>Upper Deck</td>
+                                                <td class="etat">Protégée</td>
+                                                <td class="qty">3</td>
+                                                <td><span class="btn glyphicon glyphicon-plus" style="top: 0; padding: 0; width: 100%; text-align: left;"></span></td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td>Alex Ovechkin</td>
+                                                <td>#8</td>
+                                                <td>Capitals</td>
+                                                <td>2015</td>
+                                                <td>O-Pee-Chee</td>
+                                                <td class="etat">Protégée</td>
+                                                <td class="qty">3</td>
+                                                <td><span class="btn glyphicon glyphicon-plus" style="top: 0; padding: 0; width: 100%; text-align: left;"></span></td>
+                                            </tr></tbody>
                     </table>
+                        </fieldset>
                     
-
-                    <button type="button" class="btn btn-default btn-ajout-carte" aria-label="Left Align">
-                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                    </button>
-
+<button id="btnInsererResultats" type="button" class="btn btn-default">Insérer tous les résultats</button>
                     <!-- Button (Double) -->
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="lblImage"></label>
@@ -186,7 +232,7 @@
     </div>
     <!-- /.container -->
     
-    <div class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal fade modal-cartes-inserees" tabindex="-1" role="dialog">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -253,6 +299,26 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
                                     <button type="button" class="btn btn-primary" data-dismiss="modal">Confirmer</button>
+                                </div>
+                            </div>
+                            <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+                    </div>
+                    <!-- /.modal -->
+    
+    <div class="modal fade modal-succes-insertion" tabindex="-1" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">Succès!</h4>
+                                </div>
+                                <div class="modal-body">
+                                    4 cartes ont été insérées dans le cartable.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
                                 </div>
                             </div>
                             <!-- /.modal-content -->

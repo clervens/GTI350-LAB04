@@ -1,4 +1,4 @@
-/*function fillDropdowns() {
+function fillDropdowns() {
     // Remplissage du dropdown d'année
     var dropDownAnnee = $('.dropDownAnnee');
 
@@ -13,7 +13,7 @@
         dropDownEtat.append('<option value="' + etat + '">' + etat + '</option>');
     });
 }
-
+/*
 function removeRow() {
     $(this).closest('tr').remove();
 }
@@ -54,14 +54,36 @@ function initialiserRowCarte(row) {
 }
 */
 $(function () {
-    /*$('.succes-ajout-cartes').hide();
-
+    fillDropdowns();
+    
+    // Autocomplete
+    $('.input-nom').typeahead({source: model.nom_joueurs});
+    $('.input-equipe').typeahead({source: model.equipes});
+    $('.input-serie').typeahead({source: model.series});
+    
+    $('.modal').modal({show: false});
+    
+    $('#btnInsererResultats').click(function() {
+        $('.modal-succes-insertion').modal('show');
+        $('.table-resultats').find('.glyphicon').removeClass('glyphicon-plus btn').addClass('glyphicon-ok');
+        $(this).prop("disabled",true);
+        $('#lblNbCartesCartable').text('4');
+    });
+    
+    $('.btn-cartes-insereres').click(function() {
+        $('.modal-cartes-inserees').modal('show');
+    });
+    
     $('form').submit(function (e) {
         e.preventDefault();
-        $('.succes-ajout-cartes').show();
+        $('.succes-ajout-cartable').show();
         $("html, body").animate({ scrollTop: 0 }, "fast");
         return false;
     });
+    
+    /*$('.succes-ajout-cartes').hide();
+
+    
     
     // création de la table d'ajouts
     var tableRow = `<tr> 
@@ -162,10 +184,6 @@ $(function () {
     $('.input-equipe').typeahead({source: model.equipes});
     $('.input-serie').typeahead({source: model.series});
     */
-    $('.modal').modal({show: false});
     
-    $('.btn-cartes-insereres').click(function() {
-        $('.modal').modal('show');
-    });
     
 });
