@@ -49,7 +49,7 @@
 				<fieldset>
 					<div class="col-md-12">
 						<!-- Form Name -->
-						<legend>Recherche de cartes : mes cartes</legend>
+						<legend>Mes cartes</legend>
 					</div>
 					<div class="col-md-12">
 						<div class="input-group">
@@ -124,7 +124,7 @@
                         <div class="row">
                             <div class="col-md-6" style="text-align:center">Nombre de résultat : 50</div>
                             <div class="col-md-6" style="text-align:center">
-                                Nombre de résultats par page 
+                                Nombre de résultats par page
                                 <select name="" id="" disabled>
                                     <option value="">10</option>
                                     <option value="">15</option>
@@ -386,7 +386,7 @@
                     Comfirmation
                 </div>
                 <div class="modal-body">
-                    Blablabla... bla... blabla...
+                    Êtes vous sur de vouloir supprimer cette carte ?
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -425,14 +425,19 @@
             $("#tableRecherche tbody tr td:not(:last-child)").on('click', function(){
                 document.location = "/consulter-carte.html";
             });
-            
+
 
             $("#tableRecherche tbody tr td:last-child").on('click', function(){
+								$("#confirm-delete").data('trigger', this);
                 $("#confirm-delete").modal();
             });
-            
+
             $('#confirm-delete').on('show.bs.modal', function(e) {
-                $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+								var that = this;
+                $(this).find('.btn-ok').on('click', function(){
+										$(that).modal('hide');
+										$($(that).data('trigger')).parents('tr').remove();
+								});
             });
 
             $('input[type=text]').on('input', function(){
@@ -442,11 +447,11 @@
             $('#search').on('click', function(){
                 $(".search-results-container").show();
             });
-            
+
             $('.qty').each(function(){
                 $(this).text(Math.floor(Math.random() * 3) + 1);
             });
-            
+
             $('.etat').each(function(){
                 $(this).text(model.etats[Math.floor(Math.random() * model.etats.length)]);
             });
