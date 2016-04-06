@@ -53,7 +53,7 @@
 					</div>
 					<div class="col-md-12">
 						<div class="input-group">
-							<input type="text" class="form-control" id="exampleInputAmount" placeholder="Nom de Joueur...">
+							<input type="text" class="form-control input-tous" id="exampleInputAmount" placeholder="Nom de joueur, équipe, etc.">
 							<div class="input-group-btn">
 								<a id="search" class="btn btn-primary" onclick="return false;">Rechercher</a>
 							</div>
@@ -120,7 +120,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="search-results-container" style="display: none; padding-top: 30px;">
+					<div class="search-results-container" style="padding-top: 30px;">
                         <div class="row">
                             <div class="col-md-6" style="text-align:center">Nombre de résultat : 50</div>
                             <div class="col-md-6" style="text-align:center">
@@ -402,6 +402,7 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="/js/bootstrap.min.js"></script>
+	<script src="js/bootstrap3-typeahead.min.js"></script>
 
 	<script src="/js/app.js"></script>
 
@@ -415,12 +416,24 @@
 					$(".search-results-container").show();
 				}
 			}
+            var dropDownAnnee = $("#dropDownAnnee");
+            for (var i = 2016; i != 1900; i--) {
+                dropDownAnnee.append('<option value="' + i + '">' + i + '</option>');
+            }
+            var dropDownEtat = $('#dropDownEtat');
+    
+            model.etats.forEach(function (etat) {
+                dropDownEtat.append('<option value="' + etat + '">' + etat + '</option>');
+            });
+            $('.input-nom').typeahead({source: model.nom_joueurs});
+            $('.input-equipe').typeahead({source: model.equipes});
+            $('.input-serie').typeahead({source: model.series});
 
 			$(".pagination li").find("a[href='?page="+page+"']").parent().addClass("active");
 			$(".pagination li a.previous").attr("href",$(".pagination li a.previous").attr("href") + Math.max(1, parseInt(page)-1));
 			$(".pagination li a.next").attr("href",$(".pagination li a.next").attr("href") + Math.min(5, parseInt(page)+1));
 			$("#tableRecherche tbody").randomize("tr");
-                $("#tableRecherche tbody").find("tr:nth-last-child(-n+7)").remove();
+                $("#tableRecherche tbody").find("tr:nth-last-child(-n+7)").hide();
 
             $("#tableRecherche tbody tr td:not(:last-child)").on('click', function(){
                 document.location = "/consulter-carte.html";
@@ -433,11 +446,11 @@
             });
 
             $('#confirm-delete').on('show.bs.modal', function(e) {
-								var that = this;
+                var that = this;
                 $(this).find('.btn-ok').on('click', function(){
-										$(that).modal('hide');
-										$($(that).data('trigger')).parents('tr').remove();
-								});
+                    $(that).modal('hide');
+                    $($(that).data('trigger')).parents('tr').remove();
+                });
             });
 
             $('input[type=text]').on('input', function(){

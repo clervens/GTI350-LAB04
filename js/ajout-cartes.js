@@ -65,19 +65,19 @@ $(function () {
     // création de la table d'ajouts
     var tableRow = `<tr> 
 			<td> 
-				<input id="lblNom1" name="lblNom" type="text" placeholder="" class="form-control input-md nameInput input-nom" data-provide="typeahead" autocomplete="off" required="">
+				<input id="lblNom1" name="lblNom" type="text" placeholder="" class="form-control input-md nameInput input-nom" data-provide="typeahead" autocomplete="off" required="" maxlength="30">
 			</td>
 			<td>
 				<input id="lblNo" name="lblNo" type="number" value="99" min="1" max="99" placeholder="" class="form-control noInput" required="">
 			</td>
 			<td>
-				<input id="lblEquipe1" name="lblNom" type="text" placeholder="" class="form-control input-md equipeInput input-equipe" data-provide="typeahead" autocomplete="off" required="">
+				<input id="lblEquipe1" name="lblNom" type="text" placeholder="" class="form-control input-md equipeInput input-equipe" data-provide="typeahead" autocomplete="off" required="" maxlength="30">
 			</td>
 			<td>
                 <select name="dropDownAnnee" class="form-control dropDownAnnee anneeInput"></select>
 			</td>
             <td>
-				<input id="lblSerie1" name="lblSerie" type="text" placeholder="" class="form-control input-md serieInput input-serie" data-provide="typeahead" autocomplete="off" required="">
+				<input id="lblSerie1" name="lblSerie" type="text" placeholder="" class="form-control input-md serieInput input-serie" data-provide="typeahead" autocomplete="off" required="" maxlength="30">
 			</td>
 			<td>
                 <select name="dropDownEtat" class="form-control dropDownEtat etatInput"></select>

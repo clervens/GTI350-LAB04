@@ -11,6 +11,8 @@ $(function() {
   }, 1000);
 
   loadLayout();
+    if($(".input-tous").length)
+        $(".input-tous").typeahead({source: $.merge($.merge(model.nom_joueurs, model.etats), $.merge(model.equipes, model.series))});
 });
 
 
@@ -34,8 +36,8 @@ jQuery.extend({
 var model = {
     "etats": ["Impécable","Légèrement abîmée","Abîmée", "Protégée"],
     "nom_joueurs": ["Sidney Crosby", "Martin Brodeur", "P.K. Subban"],
-    "equipes": ["BlackHawks", "Bruins", "Canadiens", "Red Wings", "Sharks", "Penguins"],
-    "series": ["O-Pee-Chee", "Upper Deck", "SPx", "Ultra", "Black Diamond"]
+    "equipes": ["Anaheim Ducks","Arizona Coyotes","Boston Bruins","Buffalo Sabres","Calgary Flames","Carolina Hurricanes","Chicago Blackhawks","Colorado Avalanche","Columbus Blue Jackets","Dallas Stars","Detroit Red Wings","Edmonton Oilers","Florida Panthers","Los Angeles Kings","Minnesota Wild","Montreal Canadiens","Nashville Predators","New Jersey Devils","New York Islanders","New York Rangers","Ottawa Senators","Philadelphia Flyers","Pittsburgh Penguins","San Jose Sharks","St. Louis Blues","Tampa Bay Lightning","Toronto Maple Leafs","Vancouver Canucks","Washington Capitals","Winnipeg Jets"],
+    "series": ["O-Pee-Chee", "Upper Deck", "SPx", "Ultra", "Black Diamond"] 
 }
 
 $.fn.randomize = function(childElem) {
@@ -52,3 +54,5 @@ $.fn.randomize = function(childElem) {
 
   });    
 }
+
+
