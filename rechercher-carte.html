@@ -55,7 +55,7 @@
 						<div class="input-group">
 							<input type="text" class="form-control input-tous" id="exampleInputAmount" placeholder="Nom de joueur, équipe, etc.">
 							<div class="input-group-btn">
-								<a id="search" class="btn btn-primary" onclick="return false;">Rechercher</a>
+								<button type="button" id="search" class="btn btn-primary">Rechercher</a>
 							</div>
 						</div>
 						<div class="panel-group" id="accordion">
@@ -155,7 +155,7 @@
                             </ul>
 						</div>
 						<div class="col-md-12">
-							<table id="tableRecherche" class="table table-striped table-bordered table-hover">
+							<table id="tableRecherche" class="table table-bordered table-hover">
 								<thead>
 									<tr>
 										<th>Nom de Joueur</th>
@@ -459,6 +459,7 @@
 
             $('#search').on('click', function(){
                 $(".search-results-container").show();
+                $("#tableRecherche tbody").randomize("tr");
             });
 
             $('.qty').each(function(){

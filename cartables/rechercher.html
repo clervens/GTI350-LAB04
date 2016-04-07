@@ -55,7 +55,7 @@
             <div class="input-group">
               <input type="text" class="form-control" id="exampleInputAmount" placeholder="Nom de Joueur ou Propriétaire...">
               <div class="input-group-btn">
-                <a id="search" class="btn btn-primary" onclick="return false;">Rechercher</a>
+                <button type="button" id="search" class="btn btn-primary">Rechercher</a>
               </div>
             </div>
             <div class="panel-group" id="accordion">
@@ -338,6 +338,7 @@
     
     $('#search').on('click', function(){
          $(".search-results-container").show();
+        $("#tableRecherche tbody").randomize("tr");
     });
       
   });
